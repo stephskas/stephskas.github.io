@@ -1,0 +1,33 @@
+body {
+  text-align: center;
+  font-family: "Cabin", Arial, Helvetica, sans-serif;
+  color: #323e49;
+  margin: 0;
+  padding: 0;
+}
+#container {
+  margin: 0 auto;
+}
+#gameboard {
+  background-color: #e8e114;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.slot {
+  height: 4.75vw;
+  width: 4.75vw;
+  max-height: 80px;
+  max-width: 80px;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid #f2ec43;
+}
+/* RESET */
+button {
+  cursor: pointer;
+  width: 125px;
+  margin: 25px 0;
+  padding: 15px 15px;
+  letter-spacing: 0.05rem;
+}

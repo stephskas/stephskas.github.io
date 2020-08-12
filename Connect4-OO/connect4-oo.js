@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.renderGame() 
       this.player = 1
       this.selectedCount = 1
+      this.boundHandleWin = this.handleWin.bind(this);
     }
     renderGame() {
       const container = document.getElementById("container")
@@ -80,16 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
           // console.log(this.player1Color)
           this.playerPlacements[i][selectedCol] = this.player;
           // Check for win
-          if (this.checkForWin()) {
-            // setTimeout(handleWin, 500); // 500ms = 1/2sec
-            return this.handleWin();
+          if (this.checkForWin(this.player)) {
+            let winningColor = (this.player === 1) ? this.player1Color : this.player2Color; 
+            selected.style.backgroundColor = winningColor;
+            return setTimeout(this.boundHandleWin, 100); // 500ms = 1/2sec
           }
           // Check for draw (42 total slots filled)
           if (document.querySelectorAll("td.selected").length === (this.rowCount * this.colCount)) {
             document.getElementsByTagName("h3")[0].innerText = `DRAW!`
             // return null;
           }
-          console.log(this.player)
           if (this.player === 1) {
             selected.style.backgroundColor = this.player1Color;
             document.getElementsByTagName("h3")[0].innerText = "Player 1"
@@ -100,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
             this.player = 1
           }
           selected.classList.add("selected");
-          selectedCount += 1;
+          this.selectedCount += 1;
           return;
         }
       }

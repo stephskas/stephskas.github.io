@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADER</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="grader.js"></script>
+    <link rel="stylesheet" href="grader.css">
+  </head>
+  <body>
+    <h3><span class="category">MOVIES</span></h3>
+    <p>Enter title and your rating</p>
+      <div class="star-container">
+        <ul class="stars">
+          <li class="star" title="TERRIBLE" data-value='1'>★</li>
+          <li class="star" title="OK" data-value='2'>★</li>
+          <li class="star" title="GOOD" data-value='3'>★</li>
+          <li class="star" title="GREAT" data-value='4'>★</li>
+          <li class="star" title="MEMORABLE" data-value='5'>★</li>
+        </ul>
+      </div>
+    <form id="movie-input-form">
+      <input name="title" id="input-title" type="text">
+      <input name="remove" type="button" id="clearBtn" value="X"> <br>
+    </form>
+    <button type="submit" id="submitBtn">SUBMIT</button>
+    <div id="errorMsg"></div>
+    <ol id="userList"></ol>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  </body>
+</html>
+

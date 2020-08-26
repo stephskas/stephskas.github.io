@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Maze</title>
+    <style>
+      * {
+        background-color: #222;
+        color: #f1f1f1;
+      }
+      body {
+        background-color: #222 !important;
+      }
+      .container {
+        margin-top: 30px;
+      }
+      button {
+        color: black !important;
+      }
+      img {
+        /* height: 295px;
+        width: 210px; */
+      }
+
+    </style>
+    <link rel="stylesheet"
+      href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+  </head>
+  <body>
+    <div class="container">
+    <h1>TV Maze</h1>
+
+    <form class="form-inline mb-3" id="search-form">
+      <input class="form-control" id="search-query" placeholder="enter search term">
+      <button class="btn btn-secondary ml-2" type="submit">Go!</button>
+    </form>
+
+    <section style="display: none" id="episodes-area">
+      <h2 class="pt-2">Episodes</h2>
+      <ul id="episodes-list">
+      </ul>
+    </section>
+
+    <div class="row" id="shows-list">
+    </div>
+
+<!--<a href="https://icon-library.net/icon/image-missing-icon-8.html">Image Missing Icon #432591</a> -->
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="http://unpkg.com/axios/dist/axios.js"></script>
+    <script src="tvmaze.js"></script>
+
+    </div>
+  </body>
+
+  </html>

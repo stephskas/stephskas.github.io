@@ -1,5 +1,5 @@
 jQuery(function ($) {
-  let catData = {};
+  let catData = "";
   //HANDLERS
   // Rating selection
   $(".stars li")
@@ -41,51 +41,56 @@ jQuery(function ($) {
             $(this).removeClass("selected")
           }
         })
-      // let catData = {rating: $rating}
-      let $rating = $("li.selected").length
-      catData.rating = $rating
+      let $selectedRating = $("li.selected").length;
+      for (s = 0; s < $selectedRating; s++) {
+        catData += "★"
+      }
     })
 
   // DATA  
-  let catList = [];
-  let $catId = 1; 
+
   $("form").on("change", function () {
     // Should store text input for title in an object
     // Should store list id in an object and increment id on form change
-    // let catData = {title: $title, id: $catId};
     let $title = $("#input-title").val()
-    catData.title = $title
-    catData.id = $catId
-    console.log(catData)
   })
     // On submit should add text input to a list displayed to user
     // On submit should append stars to list
     // On submit should display list to user
     // On submit should clear title input field 
+    // On enter should act as on submit
+
+  $(document).on("keypress", function (e) {
+    if (e.which == 13) {
+       $("#submitBtn").click();
+    }
+  });
+  
   $("#submitBtn").on("click", function(e){
     e.preventDefault();
     let $title = $("#input-title").val();
-    let rating = $("li.selected").length; 
+    let rating = $("li.selected").length 
       if ($title && (rating > 0 === true)){
+        let $post = `${$title} ${catData}`;
         $("#errorMsg").remove()
-        let listItem = $("<li>", {text: $title});
-        listItem.addClass("listItem");
-        // for(let i = rating; i <=5)
-        listItem.append($(".star-container").html());
-        listItem.append($("<button>", {text: "X"}).addClass('removeBtn'));
+        let listItem = $("<li>", { text: $post})
+        listItem.addClass("listItem")
+        listItem.append($("<button>", { text: "X" }).addClass("removeBtn"))
         $("#userList").append(listItem);
         $("#input-title").val("");
         $("li.selected").removeClass("selected");
-        $(".removeBtn").click(function(e) {
+        catData = "";
+        $(".removeBtn").click(function (e) {
           $(this).parent().remove()
         })
       } else {
         $("#errorMsg").append($("<p>", {text: "Please enter a title and rating"}));
       }     
   });
-  // click on clear button should clear title  input field and rating 
+  // click on clear button should clear title input field and rating 
   $("#clearBtn").on("click", function(e){
     $("#input-title").val("");
     $("li.selected").removeClass("selected");
+    catData = "";
   });
 });

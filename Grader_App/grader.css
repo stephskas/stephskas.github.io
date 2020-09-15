@@ -1,25 +1,29 @@
 /*  GLOBAL */
 :root {
-  --main-bg-color: #f2f2f2;
+  --main-bg-color: #000;
   --white: #fff;
-  --offwhite: #d6d6d6;
-  --grey: #555;
-  --yellow:#ffcc36;
+  --offwhite: #f2f2f2;
+  --grey: rgba(80, 80, 80, 0.9);
+  --lightgrey: rgba(206, 206, 206, 0.9); 
+  --yellow: #ffcc36;
   --red: #ce4618;
 }
 body {
   background-color: var(--main-bg-color);
+  background-image: url("anastase-maragos-QnQqxxAhSEM-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family:"Open Sans", Helvetica, Arial, sans-serif;
-  color:var(--grey);
+  font-family:'Alata', 'Open Sans', Helvetica, Arial, sans-serif;
+  color:var(--offwhite);
   max-width: 550px;
   margin:0 auto;
   padding:0 20px;
 }
 h3 {
-  font-size: 3em;
+  font-size: 3.5em;
   margin: 5vh 0 20px 0;
 }
 /*  FORM */
@@ -28,6 +32,7 @@ form {
   align-items: center;
   margin-left: 20px;
   border: none;
+  color:var(--grey);
 }
 input {
   background-color: var(--white);
@@ -51,7 +56,7 @@ ul.stars {
 ul.stars > li.star {
   display: inline-block;
   text-align: center;
-  font-size: 1.25em;
+  font-size: 2em;
   letter-spacing:.35em;
   cursor: pointer;
 }
@@ -75,23 +80,24 @@ ul.stars > li.star.hover, ul.stars > li.star.selected {
   cursor: pointer;
 }
 #clearBtn:hover {
-  background-color: #7f7f7f;
+  background-color:var(--lightgrey);
+  border: 2px solid white;
 }
 #submitBtn {
-  border: 1px solid var(--grey);
+  border: 2px solid white;
   border-radius: 5px;
   padding: 10px 20px;
   margin: 20px auto;
   cursor: pointer;
 }
 #submitBtn:hover, #submitBtn:active{
-  background-color: var(--offwhite);
+  background-color: var(--lightgrey);
   border: 1px solid var(--grey);
+  color: var(--offwhite)
 }
 .removeBtn {
   padding: 2px 2px 0 2px;
   width: 2em;
-
   border: none;
   border-radius: 5px;
   font-size: .75em;
@@ -108,13 +114,14 @@ ul.stars > li.star.hover, ul.stars > li.star.selected {
     display: flex;
     flex-direction: column;
     width: 500px;
+    text-align: left;
+    line-height: 2em;;
 }
 #userList ul.stars {
   margin-left: 15px
 }
 #userList li ul li.star {
   font-size: .75em;
-  text-align: left;
   padding-left: 0;
 }
 ol {
@@ -135,4 +142,10 @@ li {
 /* ERRORS */
 #errorMsg {
   color: var(--red);
+}
+#credit{
+  font-size: .75em;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
 }

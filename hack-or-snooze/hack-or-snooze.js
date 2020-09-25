@@ -313,7 +313,7 @@ jQuery(function($){
     })
     // Event listener for adding story.
     $("#navAddArticle").on("click", function () {
-      console.debug("submit-form clicked")
+      console.debug("navAddArticle clicked")
       $("#submit-form").toggleClass("hidden")
     })
     $("#submit-form").on("submit", async function(e) {
@@ -368,15 +368,15 @@ jQuery(function($){
   })
 
   $("#navFavorites").on("click", function(e) {
-    console.debug("navFavorites")
+    console.debug("#navFavorites")
     if(currentUser){
       generateFaves();
       $("#favorited-articles").toggleClass("hidden")
     }
   });
 
-  $("#navMyStories").on("click"), function(e) {
-    console.log('MyStories', e)
+  $("#navMyArticles").on("click"), function(e) {
+    console.log('"#navMyArticles', e)
     if(currentUser){
       generateMyStories();
       $("#my-articles").toggleClass("hidden")

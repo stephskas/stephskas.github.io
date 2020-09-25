@@ -312,7 +312,7 @@ jQuery(function($){
       location.reload()
     })
     // Event listener for adding story.
-    $("#navAddStory").on("click", function () {
+    $("#navAddArticle").on("click", function () {
       console.debug("submit-form clicked")
       $("#submit-form").toggleClass("hidden")
     })

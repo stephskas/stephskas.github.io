@@ -376,7 +376,7 @@ jQuery(function($){
   });
 
   $("#navMyArticles").on("click"), function(e) {
-    console.log('"#navMyArticles', e)
+    console.log("#navMyArticles clicked", e)
     if(currentUser){
       generateMyStories();
       $("#my-articles").toggleClass("hidden")
@@ -461,6 +461,7 @@ jQuery(function($){
     console.debug("generateFaves")
     // empty out list by default
     $("#favorited-articles").empty();
+    $("#favorited-articles").toggleClass("hidden");
     // if the user has no favorites
     if (currentUser.favorites.length === 0) {
       $("#favorited-articles").append("<h5>No favorites added</h5>");

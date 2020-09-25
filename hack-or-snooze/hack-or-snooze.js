@@ -375,13 +375,13 @@ jQuery(function($){
     }
   });
 
-  $("#navMyArticles").on("click"), function(e) {
+  $("#navMyArticles").on("click", function(e) {
     console.log("#navMyArticles clicked", e)
     if(currentUser){
       generateMyStories();
       $("#my-articles").toggleClass("hidden")
     }
-  }
+  });
   
   async function checkIfLoggedIn() {
     console.debug("checkIfLoggedIn")
